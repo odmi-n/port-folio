@@ -17,6 +17,8 @@ export default function AboutSection() {
     { date: "2024/4", event: "フリーランスエンジニアとして活動開始" }
   ]
 
+
+
   // 技術要件データ
   const techRequirements = [
     { category: "フロントエンド", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"] },
@@ -48,23 +50,23 @@ export default function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">About</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">About</h2>
         </div>
 
         {/* タブナビゲーション */}
         <div className="flex justify-center mb-8">
-          <div className="flex space-x-8 border-b border-gray-200">
+          <div className="flex space-x-8 border-b border-gray-800">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`pb-4 px-2 text-lg font-medium transition-colors ${
+                className={`pb-4 px-2 text-lg transition-colors ${
                   activeTab === tab.id
-                    ? "text-black border-b-2 border-black"
-                    : "text-gray-500 hover:text-black"
+                    ? "text-white border-b-2 border-white font-bold"
+                    : "text-gray-400 hover:text-white font-medium"
                 }`}
               >
                 {tab.label}
@@ -81,11 +83,11 @@ export default function AboutSection() {
               <table className="w-full border-collapse">
                 <tbody>
                   {careerData.map((item, index) => (
-                    <tr key={index} className="border-b border-gray-200">
-                      <td className="py-4 px-2 text-gray-600 font-medium whitespace-nowrap w-24">
+                    <tr key={index} className="border-b border-gray-800">
+                      <td className="py-4 px-2 text-gray-400 font-medium whitespace-nowrap w-24">
                         {item.date}
                       </td>
-                      <td className="py-4 px-4 text-black">
+                      <td className="py-4 px-4 text-white font-normal">
                         {item.event}
                       </td>
                     </tr>
@@ -100,12 +102,12 @@ export default function AboutSection() {
             <div className="space-y-8">
               {techRequirements.map((category, index) => (
                 <div key={index}>
-                  <h3 className="text-xl font-semibold text-black mb-4">{category.category}</h3>
+                  <h3 className="text-xl font-bold text-white mb-4">{category.category}</h3>
                   <div className="flex flex-wrap gap-3">
                     {category.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="px-4 py-2 bg-gray-100 text-black rounded-lg text-sm font-medium"
+                        className="px-4 py-2 bg-gray-800 text-white rounded-lg text-sm font-medium"
                       >
                         {skill}
                       </span>
@@ -121,11 +123,11 @@ export default function AboutSection() {
             <div className="space-y-8">
               {equipment.map((category, index) => (
                 <div key={index}>
-                  <h3 className="text-xl font-semibold text-black mb-4">{category.category}</h3>
+                  <h3 className="text-xl font-bold text-white mb-4">{category.category}</h3>
                   <ul className="space-y-2">
                     {category.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="text-gray-700 flex items-center">
-                        <span className="w-2 h-2 bg-black rounded-full mr-3"></span>
+                      <li key={itemIndex} className="text-gray-300 flex items-center font-normal">
+                        <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
                         {item}
                       </li>
                     ))}
@@ -144,10 +146,10 @@ export default function AboutSection() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group"
+                  className="flex items-center p-6 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors group"
                 >
                   <span className="text-2xl mr-4">{link.icon}</span>
-                  <span className="text-lg font-medium text-black group-hover:text-gray-600">
+                  <span className="text-lg font-semibold text-white group-hover:text-gray-300">
                     {link.name}
                   </span>
                 </a>

@@ -1,11 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Noto_Sans_JP } from "next/font/google"
+import { Inter } from "next/font/google"
 import "./globals.css"
 import { LanguageProvider } from "./contexts/LanguageContext"
+import LoadingBar from "./components/LoadingBar"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-noto-sans-jp" })
 
 export const metadata: Metadata = {
   title: "Portfolio | フルスタックエンジニア",
@@ -25,7 +25,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" className="scroll-smooth">
-      <body className={`${inter.variable} ${notoSansJP.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
+        <LoadingBar />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

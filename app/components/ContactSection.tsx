@@ -82,13 +82,13 @@ export default function ContactSection() {
     <section id="contact" className="py-20 bg-black text-white">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("contact.title")}</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">{t("contact.title")}</h2>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* 名前 */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-2">
+            <label htmlFor="name" className="block text-sm font-semibold mb-2">
               {t("contact.nameLabel")}
             </label>
             <input
@@ -97,14 +97,14 @@ export default function ContactSection() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+              className="w-full px-4 py-3 bg-gray-900 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
             />
             {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name}</p>}
           </div>
 
           {/* メールアドレス */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2">
+            <label htmlFor="email" className="block text-sm font-semibold mb-2">
               {t("contact.emailLabel")}
             </label>
             <input
@@ -113,14 +113,14 @@ export default function ContactSection() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
+              className="w-full px-4 py-3 bg-gray-900 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
             />
             {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email}</p>}
           </div>
 
           {/* メッセージ */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium mb-2">
+            <label htmlFor="message" className="block text-sm font-semibold mb-2">
               {t("contact.messageLabel")}
             </label>
             <textarea
@@ -129,7 +129,7 @@ export default function ContactSection() {
               rows={6}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 resize-vertical"
+              className="w-full px-4 py-3 bg-gray-900 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 resize-vertical"
             />
             {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message}</p>}
           </div>
@@ -138,7 +138,7 @@ export default function ContactSection() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-white text-black py-3 px-6 rounded-lg font-medium hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-white text-black py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "送信中..." : t("contact.submitLabel")}
           </button>

@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --font-inter: "Inter", sans-serif;
-    --font-noto-sans-jp: "Noto Sans JP", sans-serif;
+    --font-hiragino-sans: "Hiragino Sans", "ヒラギノ角ゴシック", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -65,7 +65,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-white;
   }
 }
 
@@ -82,7 +82,28 @@ textarea:focus-visible {
 }
 
 .font-sans {
-  font-family: var(--font-inter), var(--font-noto-sans-jp), system-ui, sans-serif;
+  font-family: "Hiragino Sans", "ヒラギノ角ゴシック", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", var(--font-inter), system-ui, sans-serif;
+}
+
+/* フォントウェイト設定 */
+.font-normal {
+  font-weight: 400; /* W4 */
+}
+
+.font-medium {
+  font-weight: 500; /* W5 */
+}
+
+.font-semibold {
+  font-weight: 600; /* W6 */
+}
+
+.font-bold {
+  font-weight: 700; /* W7 */
+}
+
+.font-extrabold {
+  font-weight: 800; /* W8 */
 }
 
 @keyframes fadeInUp {

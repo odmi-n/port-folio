@@ -19,8 +19,11 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: [
+          '"Hiragino Sans"',
+          '"ヒラギノ角ゴシック"',
+          '"Hiragino Kaku Gothic ProN"',
+          '"ヒラギノ角ゴ ProN W3"',
           'var(--font-inter)',
-          'var(--font-noto-sans-jp)',
           'system-ui',
           'sans-serif'
         ]

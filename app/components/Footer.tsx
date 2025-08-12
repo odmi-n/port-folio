@@ -7,17 +7,17 @@ export default function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer className="bg-white border-t border-gray-200 py-8">
+    <footer className="bg-black border-t border-gray-800 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-          <p className="text-gray-600 text-sm">{t("footer.copyright")}</p>
+          <p className="text-gray-400 text-sm font-normal">{t("footer.copyright")}</p>
 
           <div className="flex items-center space-x-4">
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-black transition-colors"
+              className="text-gray-400 hover:text-white transition-colors"
               aria-label="GitHub"
             >
               <Github size={20} />
@@ -26,7 +26,7 @@ export default function Footer() {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-black transition-colors"
+              className="text-gray-400 hover:text-white transition-colors"
               aria-label="X (Twitter)"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
