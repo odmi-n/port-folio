@@ -129,7 +129,7 @@ export default function EducationSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Education</h2>
-          <p className="text-gray-300 text-lg">学歴、資格、継続的な学習への取り組み</p>
+          <p className="text-gray-300 text-lg">2024年4月より中高生向けにプログラミング塾を開校し、スタートメンバーとして指導をしております。自身の持つ技術を言語化することは、知識の確認や補強にも繋がっています。ここでは、どのような内容を開講しているのかを一部ご紹介します。</p>
         </div>
 
         {/* タブナビゲーション */}

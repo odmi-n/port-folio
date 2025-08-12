@@ -1,23 +1,19 @@
 "use client"
 
 import { useState } from "react"
-import { useLanguage } from "../contexts/LanguageContext"
 
 export default function AboutSection() {
-  const { t } = useLanguage()
   const [activeTab, setActiveTab] = useState("career")
 
   // 経歴データ（テーブル形式）
   const careerData = [
     { date: "2022/3", event: "茨城県立古河第三高等学校 卒業" },
     { date: "2022/4", "event": "筑波大学 情報学群 知識情報・図書館学類 入学" },
-    { date: "2023/9", event: "フリーランスエンジニアとして活動開始" },
+    { date: "2023/9", event: "同大学を休学、フリーランスエンジニアとして活動開始" },
     { date: "2023/3", event: "応用情報技術者試験 合格" },
     { date: "2024/3", event: "東京大学 工学部 情報理工学科 卒業" },
     { date: "2024/4", event: "フリーランスエンジニアとして活動開始" }
   ]
-
-
 
   // 技術要件データ
   const techRequirements = [

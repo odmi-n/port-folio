@@ -6,8 +6,8 @@ import { ChevronDown } from "lucide-react"
 export default function HeroSection() {
   const { t } = useLanguage()
 
-  const scrollToCareer = () => {
-    const element = document.getElementById("career")
+  const scrollToAbout = () => {
+    const element = document.getElementById("about")
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
@@ -28,7 +28,7 @@ export default function HeroSection() {
           </div>
 
           <button
-            onClick={scrollToCareer}
+            onClick={scrollToAbout}
             className="inline-flex items-center space-x-2 text-white hover:text-gray-300 transition-colors group font-medium"
           >
             <span>詳しく見る</span>
