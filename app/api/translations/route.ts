@@ -11,7 +11,11 @@ const translations = {
     hero: {
       name: "山田太郎",
       title: "フルスタックエンジニア",
-      catchCopy: "要件定義からPM、デザインまで。AIと共に実装する爆速エンジニア",
+      catchCopy: {
+        line1: "コーディング、",
+        line2: "情報教育、",
+        line3: "要件定義"
+      },
       intro: "Web開発5年の経験。要件定義から設計・開発・PMまで一貫して担当できます。",
     },
     career: {
@@ -60,7 +64,11 @@ const translations = {
     hero: {
       name: "Taro Yamada",
       title: "Full-Stack Engineer",
-      catchCopy: "From requirements to PM and design – a lightning-fast engineer coding alongside AI.",
+      catchCopy: {
+        line1: "Coding,",
+        line2: "Information Education,",
+        line3: "Requirements Definition"
+      },
       intro:
         "5 years of web development experience. Capable of handling everything from requirements definition to design, development, and project management.",
     },
