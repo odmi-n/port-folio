@@ -2,14 +2,14 @@ import { type NextRequest, NextResponse } from "next/server"
 
 const translations = {
   ja: {
-    siteTitle: "山田太郎 ポートフォリオ",
+    siteTitle: "諏訪巧実 ポートフォリオ",
     nav: {
       home: "ホーム",
       career: "経歴",
       contact: "お問い合わせ",
     },
     hero: {
-      name: "山田太郎",
+      name: "諏訪巧実",
       title: "フルスタックエンジニア",
       catchCopy: {
         line1: "コーディング、",
@@ -51,18 +51,18 @@ const translations = {
       messageRequired: "お問い合わせ内容を入力してください。",
     },
     footer: {
-      copyright: "© 2025 山田太郎. All rights reserved.",
+      copyright: "© 2025 諏訪巧実. All rights reserved.",
     },
   },
   en: {
-    siteTitle: "Taro Yamada Portfolio",
+    siteTitle: "Takumi Suwa Portfolio",
     nav: {
       home: "Home",
       career: "Career",
       contact: "Contact",
     },
     hero: {
-      name: "Taro Yamada",
+      name: "Takumi Suwa",
       title: "Full-Stack Engineer",
       catchCopy: {
         line1: "Coding,",
@@ -105,7 +105,7 @@ const translations = {
       messageRequired: "Please enter a message.",
     },
     footer: {
-      copyright: "© 2025 Taro Yamada. All rights reserved.",
+      copyright: "© 2025 Takumi Suwa. All rights reserved.",
     },
   },
 }

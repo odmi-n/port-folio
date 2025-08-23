@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useLanguage } from "../contexts/LanguageContext"
 
 const ImageSection = () => {
@@ -22,44 +23,50 @@ const ImageSection = () => {
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left Image - Sourcecode */}
-          <div className="group cursor-pointer">
-            <div className="relative overflow-hidden hover:shadow-xl transition-all duration-300">
+          <Link href="/programming" className="block">
+            <div className="group cursor-pointer relative overflow-hidden">
               <Image
                 src="/Source.png"
                 alt={texts[language].sourcecode}
                 width={1536}
                 height={1024}
-                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-auto object-cover transition-all duration-400 group-hover:scale-105 group-hover:brightness-90"
                 priority
               />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
-                <h3 className="text-white text-xl font-semibold">
-                  {texts[language].sourcecode}
-                </h3>
+              {/* White overlay */}
+              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              
+              {/* Label */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                              <span className="text-black text-2xl font-extrabold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-350">
+                Programming Works
+              </span>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Right Image - Teaching */}
-          <div className="group cursor-pointer">
-            <div className="relative overflow-hidden hover:shadow-xl transition-all duration-300">
+          <Link href="/education" className="block">
+            <div className="group cursor-pointer relative overflow-hidden">
               <Image
                 src="/Teaching2.png"
                 alt={texts[language].teaching}
                 width={1536}
                 height={1024}
-                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-auto object-cover transition-all duration-400 group-hover:scale-105 group-hover:brightness-90"
                 priority
               />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
-                <h3 className="text-white text-xl font-semibold">
-                  {texts[language].teaching}
-                </h3>
+              {/* White overlay */}
+              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              
+              {/* Label */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                              <span className="text-black text-2xl font-extrabold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-350">
+                Education Works
+              </span>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
