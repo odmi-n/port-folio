@@ -16,7 +16,7 @@ const translations = {
         line2: "情報教育、",
         line3: "要件定義"
       },
-      intro: "Web開発5年の経験。要件定義から設計・開発・PMまで一貫して担当できます。",
+      intro: "コーディングから教育まで。すべてがプロ。",
     },
     career: {
       title: "経歴",

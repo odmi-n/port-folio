@@ -1,127 +1,47 @@
 "use client"
 
 import { useState } from "react"
-import { GraduationCap, Award, BookOpen, Calendar } from "lucide-react"
+import { BookOpen, Users, Code, Lightbulb, Calendar } from "lucide-react"
 
 export default function EducationSection() {
-  const [activeTab, setActiveTab] = useState("academic")
-
-  // モック学歴データ
-  const academicEducation = [
+  // プログラミング塾の講座データ
+  const courses = [
     {
-      institution: "東京大学",
-      degree: "工学部 情報理工学科",
-      period: "2020年4月 - 2024年3月",
-      description: "コンピュータサイエンス、アルゴリズム、データ構造、ソフトウェア工学を専攻",
-      gpa: "3.8/4.0",
-      status: "卒業"
+      id: 1,
+      title: "プログラミング明講座",
+      description: "プログラミングの基礎から応用まで、体系的に学習できる講座です。変数、関数、条件分岐、繰り返し処理などの基本概念から始まり、オブジェクト指向プログラミング、データ構造、アルゴリズムまでを網羅的に扱います。実際のプロジェクトを通じて、実践的なスキルを身につけることができます。",
+      image: "/Teaching2.png",
+      duration: "3ヶ月",
+      level: "初級〜中級",
+      students: "15名"
     },
     {
-      institution: "私立○○高等学校",
-      degree: "普通科",
-      period: "2017年4月 - 2020年3月",
-      description: "理系コース、数学・物理・化学を重点的に学習",
-      gpa: "4.2/5.0",
-      status: "卒業"
+      id: 2,
+      title: "Web開発実践講座",
+      description: "HTML、CSS、JavaScriptの基礎から、React、Next.jsを使った現代的なWeb開発まで学習します。レスポンシブデザイン、API連携、データベース操作など、実際のWeb開発で必要となる技術を幅広くカバーします。最終的には、個人プロジェクトとして完全なWebアプリケーションを制作します。",
+      image: "/Teaching2.png",
+      duration: "4ヶ月",
+      level: "中級",
+      students: "12名"
+    },
+    {
+      id: 3,
+      title: "AI・機械学習入門",
+      description: "人工知能と機械学習の基礎理論から実装まで学習する講座です。Python、NumPy、Pandas、scikit-learnを使用して、データ分析、予測モデルの構築、深層学習の基礎を学びます。実際のデータセットを使った分析プロジェクトを通じて、AI技術の実用的な活用方法を身につけます。",
+      image: "/Teaching2.png", 
+      duration: "5ヶ月",
+      level: "中級〜上級",
+      students: "10名"
+    },
+    {
+      id: 4,
+      title: "アプリ開発講座",
+      description: "モバイルアプリケーション開発の基礎から実践まで学習します。React NativeやFlutterを使用したクロスプラットフォーム開発、ネイティブアプリ開発の手法、アプリストアへの公開プロセスまでを網羅します。UI/UXデザインの基礎も含め、ユーザーに愛されるアプリ制作を目指します。",
+      image: "/Teaching2.png",
+      duration: "4ヶ月", 
+      level: "中級",
+      students: "8名"
     }
-  ]
-
-  // モック資格・認定データ
-  const certifications = [
-    {
-      name: "応用情報技術者試験",
-      organization: "IPA（情報処理推進機構）",
-      date: "2023年10月",
-      description: "ITに関する応用的知識・技能を認定する国家試験",
-      status: "合格"
-    },
-    {
-      name: "基本情報技術者試験",
-      organization: "IPA（情報処理推進機構）",
-      date: "2022年4月",
-      description: "ITの基礎知識を認定する国家試験",
-      status: "合格"
-    },
-    {
-      name: "AWS Certified Solutions Architect",
-      organization: "Amazon Web Services",
-      date: "2023年6月",
-      description: "AWSクラウドアーキテクチャの設計・デプロイに関する認定",
-      status: "Associate"
-    },
-    {
-      name: "TOEIC",
-      organization: "ETS",
-      date: "2023年1月",
-      description: "英語コミュニケーション能力測定テスト",
-      status: "850点"
-    }
-  ]
-
-  // モックオンライン学習データ
-  const onlineLearning = [
-    {
-      platform: "Udemy",
-      courses: [
-        "React Complete Guide 2023",
-        "Node.js, Express, MongoDB Bootcamp",
-        "AWS Certified Solutions Architect"
-      ],
-      completedHours: "120時間"
-    },
-    {
-      platform: "Coursera",
-      courses: [
-        "Machine Learning by Stanford University",
-        "Algorithms Specialization",
-        "Full Stack Web Development"
-      ],
-      completedHours: "80時間"
-    },
-    {
-      platform: "Pluralsight",
-      courses: [
-        "Advanced React Patterns",
-        "Docker and Kubernetes",
-        "TypeScript Fundamentals"
-      ],
-      completedHours: "60時間"
-    }
-  ]
-
-  // モック書籍・学習リソース
-  const books = [
-    {
-      title: "Clean Code",
-      author: "Robert C. Martin",
-      category: "プログラミング",
-      status: "読了"
-    },
-    {
-      title: "Designing Data-Intensive Applications",
-      author: "Martin Kleppmann",
-      category: "システム設計",
-      status: "読了"
-    },
-    {
-      title: "You Don't Know JS",
-      author: "Kyle Simpson",
-      category: "JavaScript",
-      status: "読了"
-    },
-    {
-      title: "System Design Interview",
-      author: "Alex Xu",
-      category: "システム設計",
-      status: "読了"
-    }
-  ]
-
-  const tabs = [
-    { id: "academic", label: "Academic" },
-    { id: "certifications", label: "Certifications" },
-    { id: "online", label: "Online Learning" },
-    { id: "books", label: "Books" }
   ]
 
   return (
@@ -132,137 +52,144 @@ export default function EducationSection() {
           <p className="text-gray-300 text-lg">2024年4月より中高生向けにプログラミング塾を開校し、スタートメンバーとして指導をしております。自身の持つ技術を言語化することは、知識の確認や補強にも繋がっています。ここでは、どのような内容を開講しているのかを一部ご紹介します。</p>
         </div>
 
-        {/* タブナビゲーション */}
-        <div className="flex justify-center mb-12">
-          <div className="flex space-x-8 border-b border-gray-800 overflow-x-auto">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`pb-4 px-2 text-lg transition-colors whitespace-nowrap ${
-                  activeTab === tab.id
-                    ? "text-white border-b-2 border-white font-bold"
-                    : "text-gray-400 hover:text-white font-medium"
-                }`}
-              >
-                {tab.label}
-              </button>
+        {/* タイムライン形式の講座一覧 */}
+        <div className="relative">
+          {/* デスクトップ用の中央縦線 */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-700"></div>
+          {/* モバイル用の左側縦線 */}
+          <div className="md:hidden absolute left-6 w-0.5 h-full bg-gray-700"></div>
+          
+          <div className="space-y-12 md:space-y-16">
+            {courses.map((course, index) => (
+              <div key={course.id} className="relative">
+                {/* デスクトップ用のタイムライン番号（中央） */}
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-8 w-12 h-12 bg-white rounded-full items-center justify-center z-10 border-4 border-gray-800">
+                  <span className="text-black font-bold text-lg">{course.id}</span>
+                </div>
+                
+                {/* モバイル用のタイムライン番号（左側） */}
+                <div className="md:hidden flex absolute left-6 transform -translate-x-1/2 -translate-y-1/2 top-8 w-12 h-12 bg-white rounded-full items-center justify-center z-10 border-4 border-gray-800">
+                  <span className="text-black font-bold text-lg">{course.id}</span>
+                </div>
+                
+                {/* デスクトップレイアウト：交互配置 */}
+                <div className={`hidden md:flex items-start ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                  {/* テキスト部分 */}
+                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                    <div className="bg-gray-900 rounded-lg p-6 hover:bg-gray-800 transition-colors relative">
+                      <div className="flex items-center mb-4">
+                        <BookOpen className="text-white mr-3" size={24} />
+                        <h3 className="text-xl font-bold text-white">{course.title}</h3>
+                      </div>
+                      
+                      <p className="text-gray-300 mb-4 leading-relaxed">
+                        {course.description}
+                      </p>
+                      
+                      {/* 講座詳細情報 */}
+                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mb-4">
+                        <div className="flex items-center text-sm text-gray-400">
+                          <Calendar className="mr-2 flex-shrink-0" size={16} />
+                          <span>{course.duration}</span>
+                        </div>
+                        <div className="flex items-center text-sm text-gray-400">
+                          <Code className="mr-2 flex-shrink-0" size={16} />
+                          <span>{course.level}</span>
+                        </div>
+                        <div className="flex items-center text-sm text-gray-400">
+                          <Users className="mr-2 flex-shrink-0" size={16} />
+                          <span>{course.students}</span>
+                        </div>
+                      </div>
+                      
+                      {/* 右下の小さな画像 */}
+                      <div className="absolute bottom-4 right-4">
+                        <div className="w-16 h-12 rounded-md overflow-hidden border border-gray-600">
+                          <img 
+                            src={course.image} 
+                            alt={`${course.title}の授業風景`}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              const parent = target.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `
+                                  <div class="w-full h-full flex items-center justify-center bg-gray-700">
+                                    <svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                                      <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                                    </svg>
+                                  </div>
+                                `;
+                              }
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* モバイルレイアウト：縦積み */}
+                <div className="md:hidden pl-12">
+                  <div className="bg-gray-900 rounded-lg p-6 hover:bg-gray-800 transition-colors">
+                    <div className="flex items-center mb-4">
+                      <BookOpen className="text-white mr-3" size={24} />
+                      <h3 className="text-xl font-bold text-white">{course.title}</h3>
+                    </div>
+                    
+                    {/* モバイル用画像 */}
+                    <div className="mb-4 flex justify-end">
+                      <div className="w-20 h-16 rounded-lg overflow-hidden border-2 border-gray-600">
+                        <img 
+                          src={course.image} 
+                          alt={`${course.title}の授業風景`}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            const parent = target.parentElement;
+                            if (parent) {
+                              parent.innerHTML = `
+                                <div class="w-full h-full flex items-center justify-center bg-gray-700">
+                                  <div class="text-center text-gray-500">
+                                    <svg class="w-4 h-4 mx-auto mb-1" fill="currentColor" viewBox="0 0 20 20">
+                                      <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                                    </svg>
+                                    <p class="text-xs">画像</p>
+                                  </div>
+                                </div>
+                              `;
+                            }
+                          }}
+                        />
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+                      {course.description}
+                    </p>
+                    
+                    {/* モバイル用講座詳細情報 */}
+                    <div className="space-y-2">
+                      <div className="flex items-center text-sm text-gray-400">
+                        <Calendar className="mr-2 flex-shrink-0" size={16} />
+                        <span>{course.duration}</span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-400">
+                        <Code className="mr-2 flex-shrink-0" size={16} />
+                        <span>{course.level}</span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-400">
+                        <Users className="mr-2 flex-shrink-0" size={16} />
+                        <span>{course.students}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-
-        {/* タブコンテンツ */}
-        <div className="min-h-[600px]">
-          {/* 学歴タブ */}
-          {activeTab === "academic" && (
-            <div className="space-y-8">
-              {academicEducation.map((edu, index) => (
-                <div key={index} className="bg-gray-900 rounded-lg p-6 hover:bg-gray-800 transition-colors">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center">
-                      <GraduationCap className="text-white mr-3" size={24} />
-                      <div>
-                        <h3 className="text-xl font-bold text-white">{edu.institution}</h3>
-                        <p className="text-gray-300">{edu.degree}</p>
-                      </div>
-                    </div>
-                    <span className="text-sm text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
-                      {edu.status}
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-gray-300 mb-2">
-                        <Calendar className="inline mr-2" size={16} />
-                        {edu.period}
-                      </p>
-                      <p className="text-gray-300">{edu.description}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-gray-400">GPA</p>
-                      <p className="text-white font-semibold text-lg">{edu.gpa}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* 資格タブ */}
-          {activeTab === "certifications" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {certifications.map((cert, index) => (
-                <div key={index} className="bg-gray-900 rounded-lg p-6 hover:bg-gray-800 transition-colors">
-                  <div className="flex items-start mb-4">
-                    <Award className="text-white mr-3 mt-1" size={20} />
-                    <div>
-                      <h3 className="text-lg font-bold text-white mb-1">{cert.name}</h3>
-                      <p className="text-gray-400 text-sm">{cert.organization}</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 text-sm mb-3">{cert.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-sm">{cert.date}</span>
-                    <span className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm">
-                      {cert.status}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* オンライン学習タブ */}
-          {activeTab === "online" && (
-            <div className="space-y-8">
-              {onlineLearning.map((platform, index) => (
-                <div key={index} className="bg-gray-900 rounded-lg p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-bold text-white">{platform.platform}</h3>
-                    <span className="text-gray-400 text-sm">
-                      完了時間: {platform.completedHours}
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {platform.courses.map((course, courseIndex) => (
-                      <div
-                        key={courseIndex}
-                        className="bg-gray-800 p-3 rounded text-gray-300 text-sm"
-                      >
-                        <BookOpen className="inline mr-2" size={14} />
-                        {course}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* 書籍タブ */}
-          {activeTab === "books" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {books.map((book, index) => (
-                <div key={index} className="bg-gray-900 rounded-lg p-6 hover:bg-gray-800 transition-colors">
-                  <div className="flex items-start mb-3">
-                    <BookOpen className="text-white mr-3 mt-1" size={20} />
-                    <div>
-                      <h3 className="text-lg font-bold text-white mb-1">{book.title}</h3>
-                      <p className="text-gray-400 text-sm">{book.author}</p>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
-                      {book.category}
-                    </span>
-                    <span className="text-green-400 text-sm font-medium">
-                      {book.status}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
       </div>
     </section>
