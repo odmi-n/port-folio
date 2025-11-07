@@ -75,6 +75,29 @@ html {
   scroll-behavior: smooth;
 }
 
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #__next,
+  main {
+    background: transparent !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,

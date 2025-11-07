@@ -2,6 +2,7 @@
 
 import { Github, X, ChevronDown } from "lucide-react"
 import { motion } from "framer-motion"
+import Link from "next/link"
 import TechStackSection from "@/app/components/TechStackSection"
 
 const HERO_CONTENT = {
@@ -81,6 +82,17 @@ export default function Home() {
               <X className="h-8 w-8" />
             </a>
           </div>
+          <Link
+            href="/skill-sheet"
+            className="mx-auto block max-w-lg rounded-2xl border border-gray-200 bg-white/80 px-8 py-6 text-left shadow-xl backdrop-blur transition-all duration-200 hover:-translate-y-1 hover:border-teal-400 hover:shadow-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500"
+            aria-label="スキルシート（Skill Sheet）ページへ"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-teal-500">Skill Sheet</p>
+            <p className="mt-2 text-2xl font-bold text-gray-900">スキルシートを見る</p>
+            <p className="mt-2 text-sm text-gray-600">
+              PDF保存を意識したモックのスキルシートを表示します。
+            </p>
+          </Link>
         </motion.div>
         <motion.a
           href={`#${HERO_CONTENT.aboutSectionId}`}
